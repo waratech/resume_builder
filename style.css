@@ -1,0 +1,1472 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #7a7a7a00;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(119, 119, 119);
+    border-radius: 100px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(88, 88, 88);
+    border-radius: 100px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    transition: ease-in-out 1s;
+}
+
+
+@keyframes animatic{
+    0%{
+        transform: translateY(40px);
+        scale: 1.04;
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100%{
+        transform: translateY(0px);
+        scale: 1;
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+@keyframes animatic2{
+    0%{
+        transform: translateX(40px);
+        scale: 1.04;
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100%{
+        transform: translateX(0px);
+        scale: 1;
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes animatic3{
+    0%{
+        transform: translateX(-40px);
+        scale: 1.04;
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100%{
+        transform: translateX(0px);
+        scale: 1;
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes animatic4{
+    0%{
+        transform: translateY(-40px);
+        scale: 1.04;
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100%{
+        transform: translateY(0px);
+        scale: 1;
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+
+
+/* ----------- Blur Effect ------------- */
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+}
+
+.progressive-blur-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.progressive-blur-container > .blur-filter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+}
+
+.progressive-blur-container > .blur-filter:nth-child(1) {
+  backdrop-filter: blur(0px);
+  mask: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 40%);
+}
+
+.progressive-blur-container > .blur-filter:nth-child(2) {
+  backdrop-filter: blur(0px);
+  mask: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 50%);
+}
+
+.progressive-blur-container > .blur-filter:nth-child(3) {
+  backdrop-filter: blur(2px);
+  mask: linear-gradient(rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 60%);
+}
+
+.progressive-blur-container > .blur-filter:nth-child(4) {
+  backdrop-filter: blur(4px);
+  mask: linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 70%);
+}
+
+.progressive-blur-container > .blur-filter:nth-child(5) {
+  backdrop-filter: blur(8px);
+  mask: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 90%);
+}
+
+.progressive-blur-container > .blur-filter:nth-child(6) {
+  backdrop-filter: blur(16px);
+  mask: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%);
+}
+
+.progressive-blur-container > .gradient {
+  position: fixed;
+  bottom: 0;
+  height: 10px;
+  background: linear-gradient(transparent, #ffffff);
+}
+
+/* ----------- Blur Effect End ------------ */
+
+/* ----------- Header Start ------------ */
+header{
+    background-image: url(Assets/Header\ BG.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -80px 0px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0 0 120px 120px;
+    overflow: hidden;
+    z-index: 5;
+    position: relative;
+}
+header .deco .build{
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    animation: animatic3 1.4s ease-in-out 0.2s;
+}
+header .deco .edit{
+    position: absolute;
+    top: 18%;
+    left: 40%;
+    animation: animatic4 1.2s ease-in-out 0.4s;
+}
+header .deco .user{
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    animation: animatic2 1.8s ease-in-out 0.6s;
+}
+header .title{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 10% auto auto auto;
+}
+header .title img{
+    width: 120%;
+    margin-top: 24px;
+    animation: animatic 2s ease-in-out 1s;
+
+}
+header .title span{
+    display: inline-block;
+    background-color: #1D2E6C;
+    border-radius: 50px;
+    padding: 10px 12px;
+    font-family: 'Afacad';
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    margin-left: 100%;
+    animation: animatic 2s ease-in-out 0.5s;
+}
+header p{
+    font-family: 'Afacad';
+    font-size: 28px;
+    text-align: center;
+    color: #1D2E6C;
+    animation: animatic 2s ease-in-out 0.8s;
+}
+/* ----------- Header End ------------ */
+
+/* ----------- Overview Start ------------ */
+
+.overview{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    gap: 24px;
+}
+.overview .data{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Afacad';
+    font-size: 20px;
+}
+.overview .vl{
+    width: 3px;
+    height: 20px;
+    background-color: #e2e2e2;
+}
+
+/* ----------- Overview End ------------ */
+
+/* ----------- Intro Start -------------- */
+
+.intro{
+    margin-top: 120px;
+    font-family: 'Afacad';
+    font-size: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* ----------- Intro End -------------- */
+
+/* ----------- Goal Start --------- */
+.goal{
+    margin-top: 80px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.goal h1{
+    font-family: 'Afacad';
+    font-size: 32px;
+    font-weight: 600;
+}
+.goal p{
+    font-family: 'Afacad';
+    font-size: 20px;
+}
+/* ----------- Goal End --------- */
+
+/* ----------- Preview Start --------- */
+.preview{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.preview img{
+    width: 100%;
+}
+/* ----------- Preview End --------- */
+
+/*------ Challenge Start ----------- */
+.challenge{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.challenge h1{
+    font-family: 'Afacad';
+    font-size: 32px;
+    font-weight: 600;
+}
+.challenge p{
+    font-family: 'Afacad';
+    font-size: 20px;
+}
+.challenge .content{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 24px;
+}
+.challenge .content .data{
+    background-color: #F4F8FF;
+    padding: 20px 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+    font-family: 'Afacad';
+    font-size: 20px;
+}
+/*------ Challenge End  ----------- */
+
+/*------ Opportunity Start  ----------- */
+.oppo{
+    margin-top: 120px;
+    background-image: url(Assets/opportunity\ bg.svg);
+    width: 100%;
+    height: auto;
+    font-family: 'Afacad';
+}
+.oppo h1{
+    font-size: 32px;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: white;
+    padding-top: 40px;
+}
+.oppo p{
+    font-size: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: white;
+    margin-top: -8px;
+    padding-bottom: 40px;
+}
+/*------ Opportunity End  ----------- */
+
+/*------ Research Start  ----------- */
+.research{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.research h1{
+    font-size: 32px;
+    font-family: 'Afacad';
+    font-weight: 600;
+}
+.research h2{
+    font-size: 24px;
+    font-family: 'Afacad';
+}
+.research .methods{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: stretch;
+    padding-bottom: 40px;
+}
+.research .methods .data{
+    background-color: #FFDFAC;
+    padding: 8px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 24px;
+    flex: 1;
+    border-radius: 50px;
+    color: #5C3F0F;
+}
+.research .methods .data img{
+    width: 12%;
+}
+.research .methods .data .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: 'Afacad';
+}
+.research .methods .data .content p{
+    margin-top: -16px;
+}
+.research .methods .data .content h3{
+    font-size: 20px;
+}
+.research .insights{
+    display: flex;
+    gap: 16px;
+}
+.research .insights .data{
+    background-color: #FAF2FF;
+    font-family: 'Afacad';
+    padding: 20px;
+    border-radius: 16px;
+}
+.research .insights .data h1{
+    color: #4F1C6E;
+    font-size: 32px;
+}
+.research .insights .data p{
+    font-size: 20px;
+}
+/*------ Research End ----------- */
+
+/*------ UX Goals start ----------- */
+.ux-goals{
+    margin-top: 120px;
+    background-image: url(Assets/UX-goals-bg.svg);
+    width: 100%;
+    height: auto;
+    color: white;
+}
+.ux-goals h1{
+    padding-top: 40px;
+    font-size: 32px;
+    font-family: 'Afacad';
+    font-weight: 600;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.ux-goals .content{
+    padding-bottom: 40px;
+}
+.ux-goals .content .data{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Afacad';
+    font-size: 20px;
+    gap: 15px;
+}
+/*------ UX Goals End ----------- */
+
+/*------ Information Arch STart ----------- */
+.ia{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.ia h1{
+    font-size: 32px;
+    font-family: 'Afacad';
+    font-weight: 600;
+}
+.ia img{
+    width: 100%;
+    padding-top: 40px;
+}
+/*------ Information Arch  End ----------- */
+
+/*------ ideation STart ----------- */
+.ideation{
+    margin-top: 120px;
+    background-image: url(Assets/ideation\ bg.svg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+.ideation h1{
+    font-size: 32px;
+    font-family: 'Afacad';
+    font-weight: 600;
+    padding-top: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.ideation p{
+    font-size: 20px;
+    font-family: 'Afacad';
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.ideation .option1 h2{
+    font-family: 'Afacad';
+    font-size: 24px;
+    font-weight: 600;
+}
+.ideation .option1 span{
+    font-family: 'Afacad';
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 24px;
+    display: inline-block;
+}
+.ideation .option1{
+    background-color: #4F5059;
+    border: solid 1px #9B9B9B;
+    border-radius: 16px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 40px;
+    padding: 40px;
+}
+.ideation .option1 p{
+    margin: 0;
+}
+.ideation .option1 .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 12px;
+}
+.ideation .option1 .content p{
+    margin: 0;
+}
+.ideation .option1 .content .data{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px;
+}
+.ideation .note{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+.ideation .note p{
+    background-color: #2D2F39;
+    padding: 8px 24px;
+    border-radius: 50px;
+    align-self: center;
+    flex-grow: 0;
+    flex-wrap: wrap;
+}
+/*------ ideation End ----------- */
+
+/*-------- Usability Test Start ----------- */
+.usability{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'Afacad';
+}
+.usability h1{
+    font-size: 32px;
+    font-family: 'Afacad';
+    font-weight: 600;
+}
+.usability p{
+    font-size: 20px;
+}
+.usability span{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+}
+.usability .scenario .list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 24px;
+}
+.usability .scenario .list .data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #F7F7F7;
+    border: solid 1px #e2e2e2;
+    padding: 24px;
+    border-radius: 16px;
+    flex: 1;
+}
+.usability .scenario .list .data p{
+    margin-top: -8px;
+}
+
+.usability .finding{
+    margin-top: 40px;
+}
+.usability .finding .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-top: 24px;
+}
+.usability .finding .content .data{
+    background-color: #F7F7F7;
+    border: solid 1px #e2e2e2;
+    padding: 24px;
+    border-radius: 16px;
+    flex: 1;
+}
+.usability .finding .content #four{
+    grid-column: 1 / span 3;
+}
+
+
+.usability .results span{
+    padding-top: 40px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+}
+.usability .results .list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 24px;
+}
+.usability .results .list .data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 24px;
+    border-radius: 16px;
+    flex: 1;
+}
+.usability .results .list .data p{
+    margin-top: -8px;
+}
+.usability .results .list #one{
+    background-color: #FFF4E6;
+    color: #B3632E;
+}
+.usability .results .list #two{
+    background-color: #FFE6E6;
+    color: #6E1C1C;
+}
+
+
+.usability .results-two span{
+    padding-top: 40px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+}
+.usability .results-two .list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 24px;
+}
+.usability .results-two .list .data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 24px;
+    border-radius: 16px;
+    flex: 1;
+    background-color: #E6FFE6;
+    color: #276519;
+}
+.usability .results-two .list .data .stats{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+.usability .results-two .list .data .stats h3{
+    color: #2D2F39;
+}
+.usability .results-two .list .data p{
+    margin-top: -8px;
+    color: #276519;
+}
+/*------ Usability Test End ----------- */
+
+/*------ Why Choose Start ----------- */
+.why{
+    background-image: url(Assets/why-bg.svg);
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    color: white;
+    margin-top: 120px;
+}
+.why h1{
+    font-size: 32px;
+    font-family: 'Afacad';
+    font-weight: 600;
+    padding-top: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.why p span{
+    background-color: #FFF4AC;
+    padding: 2px;
+    color: black;
+}
+.why p{
+   font-size: 20px;
+    font-family: 'Afacad';
+    margin-left: 20%;
+    margin-right: 20%; 
+}
+.why #two{
+    padding-bottom: 40px;
+}
+/*------ Why Choose End ----------- */
+
+/*------ Final Designs Start ----------- */
+.final{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'Afacad';
+}
+.final p{
+    font-size: 20px;
+}
+.final h1{
+    font-family: 'Afacad';
+    font-size: 32px;
+    font-weight: 600;
+}
+.final h2{
+    font-family: 'Afacad';
+    font-size: 24px;
+    font-weight: 600;
+}
+.final .content .data{
+    padding-top: 40px;
+}
+.final .content .data #display{
+    width: 100%;
+}
+.final .content .data .head{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
+}
+.final .content .data p{
+    margin-top: -4px;
+}
+.final .video video{
+    border-radius: 16px;
+    margin-top: 40px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+}
+/*------ Final Designs End ----------- */
+
+/*------ Impact Start ----------- */
+.impact{
+    margin-top: 120px;
+    background-image: url(Assets/impact-bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40px;
+}
+.impact #head{
+    font-family: 'Afacad';
+    font-size: 32px;
+    font-weight: 600;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 40px;
+    color: white;
+}
+.impact .content .data{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.impact .content .data #one{
+    background-color: #E1EBF8;
+    padding: 24px;
+    border-radius: 16px;
+    color: #0876F8;
+}
+.impact .content .data #one p{
+    color: black;
+}
+
+.impact .content .data #two{
+    background-color: #F3E9F8;
+    padding: 24px;
+    border-radius: 16px;
+    color: #A12AE6;
+}
+.impact .content .data #two p{
+    color: black;
+}
+
+.impact .content .data #three{
+    background-color: #FBF3E0;
+    padding: 24px;
+    border-radius: 16px;
+    color: #CE9415;
+}
+.impact .content .data #three p{
+    color: black;
+}
+
+.impact .content .data #four{
+    background-color: #E5F9E3;
+    padding: 24px;
+    border-radius: 16px;
+    color: #17971C;
+}
+.impact .content .data #four p{
+    color: black;
+}
+.impact .content .data .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: flex-start;
+}
+.impact .content .data .icons h1{
+    margin-left: 12px;
+    padding: 0;
+}
+.impact .content .data .one{
+    font-family: 'Afacad';
+    font-size: 20px;
+}
+/*------ Impact End ----------- */
+
+/*------ What I Learned Start ----------- */
+.learned{
+    margin-top: 120px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'Afacad';
+}
+.learned h1{
+    font-size: 32px;
+    font-weight: 600;
+}
+.learned h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.learned .content .data{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+/*------ What I Learned End ----------- */
+
+/*------ Reflection Start ----------- */
+.reflection{
+    margin-top: 120px;
+    background-image: url('Assets/reflection-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    font-family: 'Afacad';
+    color: white;
+}
+.reflection h1{
+    font-size: 32px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 40px;
+}
+.reflection .data{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-right: 20%;
+    gap: 16px;
+    font-size: 24px;
+    align-items: start;
+    padding-bottom: 40px;
+}
+.reflection .data img{
+    margin-top: 32px;
+    width: 5%;
+}
+/*------ Reflection End ----------- */
+
+/*------ Thanks Start ----------- */
+.thanks{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 120px 0;
+    overflow: hidden;
+}
+.thanks .gif{
+    opacity: 0.2;
+    position: absolute;
+    background-image: url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDc5Z3B0a3pldTFlNWc1a3hhYm51N25pbTlpdnIxczBmajRtZDljaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZYRAHvl8pCGMoaS8Cl/giphy.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.thanks .data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 40px;
+    backdrop-filter: blur(11.7px);
+    -webkit-backdrop-filter: blur(11.7px);
+    border: solid 1px #e2e2e2;
+    margin-left: 24px;
+    margin-right: 24px;
+    padding: 24px 24px;
+}
+.thanks .data h1{
+    font-family: 'Afacad';
+    font-size: 32px;
+    width: 80%;
+    text-align: center;
+}
+.thanks .data a{
+    text-decoration: none;
+}
+.thanks .data a button{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    font-family: 'Afacad';
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    background-color: #B2CBA2;
+    transition: ease-in-out 0.2s;
+    flex: 1;
+    width: 100%;
+}
+.thanks .data a button:hover{
+    scale: 1.05;
+    transition: ease-in-out 0.2s;
+}
+/*------ Thanks End ----------- */
+
+/* ----------------- MOBILE DESIGN ----------------------- */
+/* ----------------- MOBILE DESIGN ----------------------- */
+/* ----------------- MOBILE DESIGN ----------------------- */
+/* ----------------- MOBILE DESIGN ----------------------- */
+
+
+@media screen and (max-width: 600px){
+    
+    /* ----------- Blur Effect ------------- */
+    .container {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+    }
+
+    .progressive-blur-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    }
+
+    .progressive-blur-container > .blur-filter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    }
+
+    .progressive-blur-container > .blur-filter:nth-child(1) {
+    backdrop-filter: blur(0px);
+    mask: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 40%);
+    }
+
+    .progressive-blur-container > .blur-filter:nth-child(2) {
+    backdrop-filter: blur(0px);
+    mask: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 50%);
+    }
+
+    .progressive-blur-container > .blur-filter:nth-child(3) {
+    backdrop-filter: blur(2px);
+    mask: linear-gradient(rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 60%);
+    }
+
+    .progressive-blur-container > .blur-filter:nth-child(4) {
+    backdrop-filter: blur(4px);
+    mask: linear-gradient(rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 70%);
+    }
+
+    .progressive-blur-container > .blur-filter:nth-child(5) {
+    backdrop-filter: blur(8px);
+    mask: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 90%);
+    }
+
+    .progressive-blur-container > .blur-filter:nth-child(6) {
+    backdrop-filter: blur(16px);
+    mask: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%);
+    }
+
+    .progressive-blur-container > .gradient {
+    position: fixed;
+    bottom: 0;
+    height: 10px;
+    background: linear-gradient(transparent, #ffffff);
+    }
+    /* ----------- Blur Effect End ------------ */
+    header{
+        background-image: url(Assets/Header\ BG\ mobile.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 0;
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        z-index: 5;
+    }
+    header .deco{
+        display: none;
+    }
+    header .title{
+        margin-top: 50%;
+        margin-left: 24px;
+        margin-right: 24px;
+        justify-content: center;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+    }
+    header .title img{
+        width: 80%;
+        margin-right: 16px;
+    }
+    header .title span{
+        font-size: 14px;
+        margin-left:60%;
+    }
+    header p{
+        font-size: 18px;
+    }
+
+
+    /* ----------- Overview Start ------------ */
+
+    .overview{
+        margin-top: 40px;
+        margin-left: 24px;
+        margin-right: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin-bottom: 40px;
+        gap: 2px;
+    }
+    .overview .vl{
+        display: none;
+    }
+    /* ----------- Overview End ------------ */
+    /* ----------- Intro Start -------------- */
+    .intro{
+        margin-top: 80px;
+        font-family: 'Afacad';
+        font-size: 20px;
+        margin-left: 24px;
+        margin-right: 20px;
+        line-height: 1.5;
+    }
+    /* ----------- Intro End -------------- */
+    /* ----------- Goal Start --------- */
+    .goal{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    /* ----------- Goal End --------- */
+    /* ----------- Preview Start --------- */
+    .preview{
+        margin-top: 80px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .preview #desktop{
+        display: none;
+    }
+    .preview img{
+        width: 100%;
+    }
+    /* ----------- Preview End --------- */
+    /*------ Challenge Start ----------- */
+    .challenge{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .challenge .content{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+    /*------ Challenge End  ----------- */
+    /*------ Opportunity Start  ----------- */
+    .oppo{
+        margin-top: 80px;
+        background-image: url(Assets/opportunity\ bg.svg);
+        width: 100%;
+        height: auto;
+        font-family: 'Afacad';
+    }
+    .oppo h1{
+        font-size: 32px;
+        margin-left: 24px;
+        margin-right: 24px;
+        color: white;
+        padding-top: 40px;
+    }
+    .oppo p{
+        font-size: 20px;
+        margin-left: 24px;
+        margin-right: 24px;
+        color: white;
+        margin-top: -8px;
+        padding-bottom: 40px;
+    }
+    /*------ Opportunity End  ----------- */
+    /*------ Research Start  ----------- */
+    .research{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .research h1{
+        font-size: 32px;
+        font-family: 'Afacad';
+        font-weight: 600;
+    }
+    .research h2{
+        font-size: 24px;
+        font-family: 'Afacad';
+    }
+    .research .methods{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: stretch;
+        padding-bottom: 40px;
+    }
+    .research .methods .data{
+        background-color: #FFDFAC;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+        border-radius: 50px;
+        color: #5C3F0F;
+    }
+    .research .methods .data img{
+        width: 12%;
+    }
+    .research .methods .data .content{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex: 2;
+        font-family: 'Afacad';
+    }
+    .research .insights{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    /*------ Research End ----------- */
+    /*------ UX Goals start ----------- */
+    .ux-goals{
+        margin-top: 80px;
+        background-image: url(Assets/UX-goals-bg.svg);
+        width: 100%;
+        height: auto;
+        color: white;
+    }
+    .ux-goals .content{
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+    .ux-goals .content .data{
+        margin-left: 24px;
+        margin-right: 24px;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Afacad';
+        font-size: 20px;
+        gap: 12px;
+    }
+    .ux-goals .content .data p{
+        flex: 1;
+    }
+    /*------ UX Goals End ----------- */
+    /*------ Information Arch STart ----------- */
+    .ia{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .ia img{
+        width: 100%;
+        padding-top: 40px;
+    }
+    /*------ Information Arch  End ----------- */
+    /*------ ideation STart ----------- */
+    .ideation{
+        margin-top: 80px;
+        background-image: url(Assets/ideation\ bg.svg);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        color: white;
+    }
+    .ideation h1{
+        font-size: 32px;
+        font-family: 'Afacad';
+        font-weight: 600;
+        padding-top: 40px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .ideation p{
+        font-size: 20px;
+        font-family: 'Afacad';
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .ideation .option1 h2{
+        font-family: 'Afacad';
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .ideation .option1 span{
+        font-family: 'Afacad';
+        font-size: 20px;
+        font-weight: 600;
+        padding-top: 24px;
+        display: inline-block;
+    }
+    .ideation .option1{
+        background-color: #4F5059;
+        border: solid 1px #9B9B9B;
+        border-radius: 16px;
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-top: 40px;
+        padding: 40px;
+    }
+    .ideation .option1 p{
+        margin: 0;
+    }
+    .ideation .option1 .content{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 12px;
+    }
+    .ideation .option1 .content p{
+        margin: 0;
+        flex: 1;
+    }
+    /*------ ideation End ----------- */
+    /*-------- Usability Test Start ----------- */
+    .usability{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+        font-family: 'Afacad';
+    }
+    .usability h1{
+        font-size: 32px;
+        font-family: 'Afacad';
+        font-weight: 600;
+    }
+    .usability p{
+        font-size: 20px;
+    }
+    .usability span{
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .usability .scenario .list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 24px;
+    }
+    .usability .scenario .list .data{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: #F7F7F7;
+        border: solid 1px #e2e2e2;
+        padding: 24px;
+        border-radius: 16px;
+        flex: 1;
+    }
+    .usability .scenario .list .data p{
+        margin-top: -8px;
+    }
+
+    .usability .finding{
+        margin-top: 40px;
+    }
+    .usability .finding .content{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 24px;
+    }
+    /*------ Usability Test End ----------- */
+    /*------ Why Choose Start ----------- */
+    .why{
+        background-image: url(Assets/why-bg.svg);
+        position: relative;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+        color: white;
+        margin-top: 120px;
+    }
+    .why h1{
+        font-size: 32px;
+        font-family: 'Afacad';
+        font-weight: 600;
+        padding-top: 40px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    .why p span{
+        background-color: #FFF4AC;
+        padding: 2px;
+        color: black;
+    }
+    .why p{
+    font-size: 20px;
+        font-family: 'Afacad';
+        margin-left: 24px;
+        margin-right: 24px; 
+    }
+    .why #two{
+        padding-bottom: 40px;
+    }
+    /*------ Why Choose End ----------- */
+    /*------ Final Designs Start ----------- */
+    .final{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+        font-family: 'Afacad';
+    }
+    /*------ Final Designs End ----------- */
+    /*------ Impact Start ----------- */
+    .impact{
+        margin-top: 80px;
+    }
+    .impact #head{
+        font-family: 'Afacad';
+        font-size: 32px;
+        font-weight: 600;
+        margin-left: 24px;
+        margin-right: 24px;
+        padding-top: 40px;
+        color: white;
+    }
+    .impact .content .data{
+        margin-left: 24px;
+        margin-right: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    /*------ What I Learned Start ----------- */
+    .learned{
+        margin-top: 80px;
+        margin-left: 24px;
+        margin-right: 24px;
+        font-family: 'Afacad';
+    }
+    .learned h1{
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .learned h2{
+        font-size: 20px;
+        font-weight: 500;
+        flex: 1;
+    }
+    /*------ What I Learned End ----------- */
+    /*------ Reflection Start ----------- */
+    .reflection{
+        margin-top: 80px;
+        background-image: url('Assets/reflection-bg.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        font-family: 'Afacad';
+        color: white;
+    }
+    .reflection h1{
+        font-size: 32px;
+        margin-left: 24px;
+        margin-right: 24px;
+        padding-top: 40px;
+    }
+    .reflection .data{
+        display: flex;
+        flex-direction: row;
+        margin-left: 24px;
+        margin-right: 24px;
+        gap: 16px;
+        font-size: 24px;
+        align-items: start;
+        padding-bottom: 40px;
+    }
+    .reflection .data img{
+        margin-top: 32px;
+        flex: 1;
+        width: 10%;
+    }
+    /*------ Reflection End ----------- */
+
+    
+}
